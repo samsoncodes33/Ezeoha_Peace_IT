@@ -1,6 +1,6 @@
-/* ===============================
+/* =====================================================
    RESET & BASE STYLES
-================================ */
+===================================================== */
 *,
 *::before,
 *::after {
@@ -10,7 +10,7 @@
 }
 
 html {
-    font-size: 16px; /* Base for rem scaling */
+    font-size: 16px;
 }
 
 body {
@@ -23,9 +23,9 @@ body {
     flex-direction: column;
 }
 
-/* ===============================
+/* =====================================================
    HEADER
-================================ */
+===================================================== */
 header {
     background-color: #2E7D32;
     color: #fff;
@@ -34,46 +34,44 @@ header {
 }
 
 header h1 {
-    font-size: clamp(1.3rem, 3vw, 2rem);
-    margin-bottom: 0.3rem;
+    font-size: clamp(1.4rem, 3vw, 2rem);
 }
 
-/* ===============================
+/* =====================================================
    MAIN CONTENT
-================================ */
+===================================================== */
 main {
     width: 95%;
     max-width: 960px;
     margin: 1.5rem auto;
     padding: 1.25rem;
     background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
     flex: 1;
 }
 
-/* ===============================
+/* =====================================================
    SECTIONS
-================================ */
+===================================================== */
 section {
-    border: 1px solid #ccc;
-    padding: 1.25rem;
-    border-radius: 10px;
-    margin-bottom: 1.25rem;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 1.25rem;
+    margin-bottom: 1.25rem;
 }
 
 section h2 {
-    margin-bottom: 1rem;
     color: #2E7D32;
     text-align: center;
+    margin-bottom: 1rem;
     font-size: clamp(1.1rem, 2.5vw, 1.6rem);
 }
 
-/* ===============================
+/* =====================================================
    FORM CONTROLS
-================================ */
+===================================================== */
 .form-control {
     margin-bottom: 1rem;
 }
@@ -82,26 +80,25 @@ section h2 {
     display: block;
     font-weight: bold;
     margin-bottom: 0.4rem;
-    font-size: 0.95rem;
 }
 
 .form-control input,
 .form-control select {
     width: 100%;
     padding: 0.6rem 0.75rem;
-    border: 1px solid #ccc;
     border-radius: 5px;
+    border: 1px solid #ccc;
     font-size: 0.95rem;
 }
 
-/* ===============================
+/* =====================================================
    BUTTONS
-================================ */
+===================================================== */
 button {
     background-color: #2E7D32;
     color: #fff;
     border: none;
-    padding: 0.6rem 1.25rem;
+    padding: 0.6rem 1.3rem;
     border-radius: 5px;
     cursor: pointer;
     transition: background 0.3s ease;
@@ -112,19 +109,30 @@ button:hover {
     background-color: #1B5E20;
 }
 
-/* ===============================
-   TABLE (RESPONSIVE)
-================================ */
+button.delete-btn {
+    background-color: #e53935;
+    padding: 0.4rem 0.7rem;
+    font-size: 0.85rem;
+}
+
+button.delete-btn:hover {
+    background-color: #b71c1c;
+}
+
+/* =====================================================
+   RESPONSIVE TABLE (ANDROID SAFE)
+===================================================== */
 .table-wrapper {
     width: 100%;
-    overflow-x: auto; /* Allows horizontal scroll on small screens */
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
 }
 
 table {
     width: 100%;
+    min-width: 650px;
     border-collapse: collapse;
-    margin-bottom: 1.25rem;
-    min-width: 600px; /* Prevents column crushing */
+    margin-bottom: 1rem;
 }
 
 table th,
@@ -133,6 +141,7 @@ table td {
     padding: 0.6rem;
     text-align: center;
     font-size: 0.9rem;
+    white-space: nowrap;
 }
 
 table th {
@@ -149,25 +158,12 @@ table th {
     font-weight: bold;
 }
 
-button.delete-btn {
-    background-color: #e53935;
-    padding: 0.4rem 0.7rem;
-    border-radius: 5px;
-    font-size: 0.85rem;
-}
-
-button.delete-btn:hover {
-    background-color: #b71c1c;
-    color: #fff;
-}
-
-/* ===============================
+/* =====================================================
    SUMMARY & PURCHASE
-================================ */
+===================================================== */
 .summary-section p {
-    margin-bottom: 0.6rem;
     font-weight: bold;
-    font-size: 0.95rem;
+    margin-bottom: 0.6rem;
 }
 
 .purchase-section {
@@ -177,27 +173,26 @@ button.delete-btn:hover {
 #purchase-result {
     margin-top: 1rem;
     padding: 0.75rem;
-    border-radius: 5px;
     background-color: #e8f5e9;
     border: 1px solid #c8e6c9;
-    font-size: 0.9rem;
+    border-radius: 5px;
 }
 
-/* ===============================
+/* =====================================================
    FOOTER
-================================ */
+===================================================== */
 footer {
     background-color: #2E7D32;
     color: #fff;
     text-align: center;
     padding: 1rem;
-    font-weight: bold;
     font-size: 0.9rem;
+    font-weight: bold;
 }
 
-/* ===============================
+/* =====================================================
    RESPONSIVE BREAKPOINTS
-================================ */
+===================================================== */
 
 /* Tablets */
 @media (max-width: 900px) {
@@ -212,21 +207,14 @@ footer {
 
 /* Mobile Phones */
 @media (max-width: 600px) {
-    header h1 {
-        font-size: 1.3rem;
-    }
-
     button {
         width: 100%;
         margin-bottom: 0.6rem;
     }
 
-    .form-control label {
-        font-size: 0.9rem;
-    }
-
-    .form-control input,
-    .form-control select {
-        font-size: 0.9rem;
+    table th,
+    table td {
+        font-size: 0.85rem;
+        padding: 0.5rem;
     }
 }
