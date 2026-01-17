@@ -1,0 +1,232 @@
+/* ===============================
+   RESET & BASE STYLES
+================================ */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 16px; /* Base for rem scaling */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #4CAF50;
+    color: #333;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ===============================
+   HEADER
+================================ */
+header {
+    background-color: #2E7D32;
+    color: #fff;
+    padding: 1.5rem 1rem;
+    text-align: center;
+}
+
+header h1 {
+    font-size: clamp(1.3rem, 3vw, 2rem);
+    margin-bottom: 0.3rem;
+}
+
+/* ===============================
+   MAIN CONTENT
+================================ */
+main {
+    width: 95%;
+    max-width: 960px;
+    margin: 1.5rem auto;
+    padding: 1.25rem;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    flex: 1;
+}
+
+/* ===============================
+   SECTIONS
+================================ */
+section {
+    border: 1px solid #ccc;
+    padding: 1.25rem;
+    border-radius: 10px;
+    margin-bottom: 1.25rem;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    background-color: #f9f9f9;
+}
+
+section h2 {
+    margin-bottom: 1rem;
+    color: #2E7D32;
+    text-align: center;
+    font-size: clamp(1.1rem, 2.5vw, 1.6rem);
+}
+
+/* ===============================
+   FORM CONTROLS
+================================ */
+.form-control {
+    margin-bottom: 1rem;
+}
+
+.form-control label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 0.4rem;
+    font-size: 0.95rem;
+}
+
+.form-control input,
+.form-control select {
+    width: 100%;
+    padding: 0.6rem 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 0.95rem;
+}
+
+/* ===============================
+   BUTTONS
+================================ */
+button {
+    background-color: #2E7D32;
+    color: #fff;
+    border: none;
+    padding: 0.6rem 1.25rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    font-size: 0.95rem;
+}
+
+button:hover {
+    background-color: #1B5E20;
+}
+
+/* ===============================
+   TABLE (RESPONSIVE)
+================================ */
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto; /* Allows horizontal scroll on small screens */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1.25rem;
+    min-width: 600px; /* Prevents column crushing */
+}
+
+table th,
+table td {
+    border: 1px solid #ccc;
+    padding: 0.6rem;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+table th {
+    background-color: #e0f2f1;
+}
+
+.income {
+    color: green;
+    font-weight: bold;
+}
+
+.expense {
+    color: red;
+    font-weight: bold;
+}
+
+button.delete-btn {
+    background-color: #e53935;
+    padding: 0.4rem 0.7rem;
+    border-radius: 5px;
+    font-size: 0.85rem;
+}
+
+button.delete-btn:hover {
+    background-color: #b71c1c;
+    color: #fff;
+}
+
+/* ===============================
+   SUMMARY & PURCHASE
+================================ */
+.summary-section p {
+    margin-bottom: 0.6rem;
+    font-weight: bold;
+    font-size: 0.95rem;
+}
+
+.purchase-section {
+    margin-top: 1.25rem;
+}
+
+#purchase-result {
+    margin-top: 1rem;
+    padding: 0.75rem;
+    border-radius: 5px;
+    background-color: #e8f5e9;
+    border: 1px solid #c8e6c9;
+    font-size: 0.9rem;
+}
+
+/* ===============================
+   FOOTER
+================================ */
+footer {
+    background-color: #2E7D32;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+/* ===============================
+   RESPONSIVE BREAKPOINTS
+================================ */
+
+/* Tablets */
+@media (max-width: 900px) {
+    main {
+        padding: 1rem;
+    }
+
+    section {
+        padding: 1rem;
+    }
+}
+
+/* Mobile Phones */
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 1.3rem;
+    }
+
+    button {
+        width: 100%;
+        margin-bottom: 0.6rem;
+    }
+
+    .form-control label {
+        font-size: 0.9rem;
+    }
+
+    .form-control input,
+    .form-control select {
+        font-size: 0.9rem;
+    }
+}
